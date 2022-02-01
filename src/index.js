@@ -2,17 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Weather from "./Weather";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Weather defaultCity="London" />
-    <p>
-      Coded by Stepahnie Lahellec, check the open source{" "}
-      <a href="https://github.com/slahel/my-app-wether-react" target="_blank">
-        here
-      </a>
-    </p>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
