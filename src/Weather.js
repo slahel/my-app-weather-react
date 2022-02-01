@@ -8,6 +8,7 @@ export default function Weather(props) {
 
   function showWeather(response) {
     setWeather({
+      city: response.data.name,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       temp: response.data.main.temp,
@@ -37,9 +38,9 @@ export default function Weather(props) {
   if (setWeather.loaded) {
     return (
       <div className="Weather">
-        <h1>Weather App</h1>
         {form}
         <ul>
+          <li>{weather.city}</li>
           <li>
             {" "}
             <img src={weather.icon} alt={weather.description} />{" "}
@@ -54,9 +55,9 @@ export default function Weather(props) {
   } else {
     return (
       <div className="Weather">
-        <h1>Weather App</h1>
         {form}
         <ul>
+          <li>{weather.city}</li>
           <li>
             {" "}
             <img src={weather.icon} alt={weather.description} />{" "}
