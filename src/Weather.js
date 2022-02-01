@@ -35,7 +35,7 @@ export default function Weather(props) {
       <button type="Submit">Search</button>
     </form>
   );
-  if (setWeather.loaded) {
+  if (weather.loaded) {
     return (
       <div className="Weather">
         {form}
@@ -53,21 +53,6 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    return (
-      <div className="Weather">
-        {form}
-        <ul>
-          <li>{weather.city}</li>
-          <li>
-            {" "}
-            <img src={weather.icon} alt={weather.description} />{" "}
-          </li>
-          <li>{weather.description}</li>
-          <li>Temperature : {Math.round(weather.temp)}°C</li>
-          <li>Humidity : {Math.round(weather.humidity)} %</li>
-          <li>Wind : {Math.round(weather.wind)} km/h</li>
-        </ul>
-      </div>
-    );
+    return <div className="Weather">{form}</div>;
   }
 }
