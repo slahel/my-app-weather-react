@@ -2,19 +2,18 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./weather.css";
 
-export default function Weather() {
-  const [city, setCity] = useState("");
-  const [loaded, setLoaded] = useState(false);
-  const [weather, setWeather] = useState({});
+export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
+  const [weather, setWeather] = useState({ loaded: false });
 
   function showWeather(response) {
-    setLoaded(true);
     setWeather({
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       temp: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      loaded: true,
     });
     console.log(response.data);
   }
@@ -35,7 +34,7 @@ export default function Weather() {
       <button type="Submit">Search</button>
     </form>
   );
-  if (loaded) {
+  if (setWeather.loaded) {
     return (
       <div className="Weather">
         <h1>Weather App</h1>
@@ -57,6 +56,16 @@ export default function Weather() {
       <div className="Weather">
         <h1>Weather App</h1>
         {form}
+        <ul>
+          <li>
+            {" "}
+            <img src={weather.icon} alt={weather.description} />{" "}
+          </li>
+          <li>{weather.description}</li>
+          <li>Temperature : {Math.round(weather.temp)}°C</li>
+          <li>Humidity : {Math.round(weather.humidity)} %</li>
+          <li>Wind : {Math.round(weather.wind)} km/h</li>
+        </ul>
       </div>
     );
   }

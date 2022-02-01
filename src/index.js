@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Weather />
+    <Weather defaultCity="London" />
     <p>
       Coded by Stepahnie Lahellec, check the open source{" "}
       <a href="https://github.com/slahel/my-app-wether-react" target="_blank">
