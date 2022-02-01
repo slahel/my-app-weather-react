@@ -7,6 +7,12 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <React.StrictMode>
     <Weather />
+    <p>
+      Coded by Stepahnie Lahellec, check the open source{" "}
+      <a href="https://github.com/slahel/my-app-wether-react" target="_blank">
+        here
+      </a>
+    </p>
   </React.StrictMode>,
   document.getElementById("root")
 );
