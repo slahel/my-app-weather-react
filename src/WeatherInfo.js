@@ -1,4 +1,5 @@
 import React from "react";
+import "./weather.css";
 import FormattedDate from "./FormattedDate";
 
 export default function WeatherInfo(props) {
@@ -10,15 +11,25 @@ export default function WeatherInfo(props) {
         </li>
         <FormattedDate date={props.data.date} />
         <li>{props.data.description}</li>
-        <li>
-          {" "}
-          <img src={props.data.icon} alt={props.data.description} />{" "}
-        </li>
-
-        <li>Temperature : {Math.round(props.data.temp)}°C</li>
-        <li>Humidity : {Math.round(props.data.humidity)} %</li>
-        <li>Wind : {Math.round(props.data.wind)} km/h</li>
       </ul>
+      <div className="row">
+        <div className="col-6">
+          {" "}
+          <img
+            src={props.data.icon}
+            alt={props.data.description}
+            className="image"
+          />{" "}
+          <span>{Math.round(props.data.temp)}°C</span>
+        </div>
+        <div className="col-6">
+          <ul>
+            <li>feeling : {Math.round(props.data.feeling)}°C</li>
+            <li>Humidity : {Math.round(props.data.humidity)} %</li>
+            <li>Wind : {Math.round(props.data.wind)} km/h</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

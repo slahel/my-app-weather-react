@@ -16,6 +16,7 @@ export default function Weather(props) {
       temp: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      feeling: response.data.main.feels_like,
       loaded: true,
     });
     console.log(response.data);
@@ -32,14 +33,16 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
   let form = (
-    <form className="weatherForm row" onSubmit={getWeather}>
+    <form className="weatherForm " onSubmit={getWeather}>
       <input
         type="text"
         placeholder="enter a city"
         onChange={getCity}
-        className="col-6"
+        className="input"
       />
-      <button type="Submit">Search</button>
+      <button type="Submit" className="Button">
+        Search
+      </button>
     </form>
   );
   if (weather.loaded) {
