@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "./weather.css";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -32,7 +32,7 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
   let form = (
-    <form className="weatherForm" onSubmit={getWeather}>
+    <form className="weatherForm row" onSubmit={getWeather}>
       <input
         type="text"
         placeholder="enter a city"
@@ -46,21 +46,7 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         {form}
-        <ul>
-          <li>
-            <h1>{weather.city}</h1>
-          </li>
-          <FormattedDate date={weather.date} />
-          <li>{weather.description}</li>
-          <li>
-            {" "}
-            <img src={weather.icon} alt={weather.description} />{" "}
-          </li>
-
-          <li>Temperature : {Math.round(weather.temp)}°C</li>
-          <li>Humidity : {Math.round(weather.humidity)} %</li>
-          <li>Wind : {Math.round(weather.wind)} km/h</li>
-        </ul>
+        <WeatherInfo data={weather} />
       </div>
     );
   } else {

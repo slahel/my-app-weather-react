@@ -1,20 +1,17 @@
-:root {
-  --darkBlue: #0881a3;
-  --whiteBack: #fffdfb;
-  --lightOrange: #fde9df;
-  --darkOrange: #ffd6a4;
-}
-
 .App {
   display: flex;
   font-size: 18px;
   font-family: Lato;
-  max-width: 900px;
+  max-width: 700px;
   padding: 20px 20px;
   margin: 20px auto;
-  background-color: #54bd94;
+  background: linear-gradient(
+    170.9deg,
+    rgb(3, 195, 195) 0.3%,
+    rgb(37, 84, 112) 87.8%
+  );
   border: solid 2px white;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 footer {
   font-size: 12px;
