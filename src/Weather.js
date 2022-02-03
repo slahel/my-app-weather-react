@@ -33,7 +33,12 @@ export default function Weather(props) {
   }
   let form = (
     <form className="weatherForm" onSubmit={getWeather}>
-      <input type="text" placeholder="enter a city" onChange={getCity} />
+      <input
+        type="text"
+        placeholder="enter a city"
+        onChange={getCity}
+        className="col-6"
+      />
       <button type="Submit">Search</button>
     </form>
   );
@@ -42,13 +47,16 @@ export default function Weather(props) {
       <div className="Weather">
         {form}
         <ul>
-          <li>{weather.city}</li>
+          <li>
+            <h1>{weather.city}</h1>
+          </li>
           <FormattedDate date={weather.date} />
+          <li>{weather.description}</li>
           <li>
             {" "}
             <img src={weather.icon} alt={weather.description} />{" "}
           </li>
-          <li>{weather.description}</li>
+
           <li>Temperature : {Math.round(weather.temp)}°C</li>
           <li>Humidity : {Math.round(weather.humidity)} %</li>
           <li>Wind : {Math.round(weather.wind)} km/h</li>

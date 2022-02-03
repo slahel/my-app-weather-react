@@ -1,5 +1,10 @@
+.Weather {
+}
+
 ul {
   list-style: none;
+  font-weight: 400;
+  color: white;
 }
 input {
   border-radius: 4px;
@@ -9,4 +14,12 @@ input {
 button {
   border-radius: 25px;
   padding: 10px 10px;
+  border-color: white;
+  background-color: white;
+}
+input {
+  border-color: white;
+}
+h1 {
+  margin-bottom: 5px;
 }
