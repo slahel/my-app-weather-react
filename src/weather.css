@@ -24,10 +24,22 @@ ul {
 }
 .Weather canvas {
   margin: 10px 10px 10px 30px;
-  display: inline-block;
+  display: inline;
   height: 78px;
   width: 78px;
 }
-.Weather Temp {
-  font-size: 78px;
+.Weather .Temp {
+  display: inline;
+  font-weight: bold;
+  font-size: 64px;
+  margin-left: 5px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+.Weather .Unit {
+  position: relative;
+  line-height: 1;
+  top: -34px;
+  font-size: 18px;
+  cursor: pointer;
 }
