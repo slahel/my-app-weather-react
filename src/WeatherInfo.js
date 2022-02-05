@@ -12,7 +12,7 @@ export default function WeatherInfo(props) {
           <h1>{props.data.city}</h1>
         </li>
         <FormattedDate date={props.data.date} />
-        <li>{props.data.description}</li>
+        <li className="text-capitalize">{props.data.description}</li>
       </ul>
       <div className="row">
         <div className="col-2 float-left image">
@@ -24,7 +24,7 @@ export default function WeatherInfo(props) {
 
         <div className="col-5">
           <ul>
-            <li>feeling : {Math.round(props.data.feeling)}°C</li>
+            <li>Feeling : {Math.round(props.data.feeling)}°C</li>
             <li>Humidity : {Math.round(props.data.humidity)} %</li>
             <li>Wind : {Math.round(props.data.wind)} km/h</li>
           </ul>
