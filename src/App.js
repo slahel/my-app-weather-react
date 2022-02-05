@@ -8,7 +8,7 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="London" />
         <footer>
-          Code by Stephanie Lahellec, check the opensource on{" "}
+          Coded by Stephanie Lahellec, check the opensource on{" "}
           <a
             href="https://github.com/slahel/my-app-wether-react"
             target="_blank"
