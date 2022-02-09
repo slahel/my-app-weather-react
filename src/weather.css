@@ -22,11 +22,9 @@ ul {
 .Weather h1 {
   font-weight: 800;
 }
-.Weather canvas {
-  margin: 10px 10px 10px 30px;
+.Weather .WeatherInfo canvas {
+  margin-left: 25px;
   display: inline;
-  height: 78px;
-  width: 78px;
 }
 .Weather .Temp {
   display: inline;
