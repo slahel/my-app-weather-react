@@ -3,8 +3,8 @@
   text-align: center;
 }
 .Forecast .ForecastDay {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 70px;
   margin-bottom: 5px;
 }
 .Forecast .ForecastMin {
