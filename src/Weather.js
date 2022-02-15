@@ -21,7 +21,6 @@ export default function Weather(props) {
       feeling: response.data.main.feels_like,
       loaded: true,
     });
-    console.log(response.data);
   }
 
   function getWeather(event) {
