@@ -1,26 +1,20 @@
 import React, { useState } from "react";
-import ReactAnimatedWeather from "react-animated-weather/build/ReactAnimatedWeather";
-import WeatherIcon from "./WeatherIcon";
 import "./Forecast.css";
 import axios from "axios";
+import ForecastDay from "./ForecastDay";
 
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
   function getForecast(response) {
     setForecast(response.data.daily);
+    setLoaded(true);
   }
   if (loaded) {
+    console.log(forecast);
     return (
       <div className="Forecast">
-        <div className="ForecastDay">Fri</div>
-        <div className="ForecastIcon">
-          <WeatherIcon code={"02d"} size={38} />
-        </div>
-        <div>
-          <span className="ForecastMax">21</span>
-          <span className="ForecastMin">12</span>
-        </div>
+        <ForecastDay data={forecast[0]} />
       </div>
     );
   } else {
